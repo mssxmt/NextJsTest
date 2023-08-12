@@ -1,95 +1,61 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Box
+      sx={{
+        display: 'flex',
+      }}
+    >
+      <Box>
+        <Alert severity='warning' sx={{ mt: 2, mb: 5 }}>
+          <AlertTitle>Hello 👋</AlertTitle>
+          この app は the Next.js App Router と Material UI v5.
+        </Alert>
+        <Alert severity='error' sx={{ mt: 2, mb: 5 }}>
+          <AlertTitle>Hello 👋</AlertTitle>
+          この app は the Next.js App Router と Material UI v5.
+        </Alert>
+        <Alert severity='info' sx={{ mt: 2, mb: 5 }}>
+          <AlertTitle>Hello 👋</AlertTitle>
+          この app は the Next.js App Router と Material UI v5.
+        </Alert>
+        <Alert severity='success' sx={{ mt: 2, mb: 5 }}>
+          <AlertTitle>Hello 👋</AlertTitle>
+          この app は the Next.js App Router と Material UI v5.
+        </Alert>
+      </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <Drawer
+        sx={{
+          width: 320,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: 320,
+            boxSizing: 'border-box',
+            top: ['48px', '56px', '64px'],
+            height: 'auto',
+            bottom: 0,
+          },
+        }}
+        variant='permanent'
+        anchor='right'
+      >
+        <List sx={{ px: 2 }}>
+          <ListItem disablePadding>
+            <Typography variant='overline' sx={{ fontWeight: 500 }}>
+              ここによくあるリストとか？
+            </Typography>
+          </ListItem>
+        </List>
+      </Drawer>
+    </Box>
+  );
 }
